@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Pooja &amp; Mayank: You're Invited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hind:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ═══════════════ RESET & TOKENS ═══════════════ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      /* Brand */
+      --brand-700: #8e1f3a;
+      --brand-800: #6e1730;
+      --brand-900: #5e1426;
+      --brand-950: #3a0b17;
+      --brand-dark: #4a0f1e;
+      /* Gold */
+      --gold-50: #fbf6ee;
+      --gold-100: #f6ecda;
+      --gold-200: #ecdcbb;
+      --gold-300: #e2c88f;
+      --gold-400: #d4b26a;
+      --gold-500: #b8924a;
+      --gold-600: #9c7a3a;
+      --gold-700: #806330;
+      /* Slate (warm) */
+      --slate-50: #f9f4ea;
+      --slate-100: #f3ebdd;
+      --slate-200: #e8dcc8;
+      --slate-500: #7d7266;
+      --slate-600: #62584e;
+      --slate-700: #4f463e;
+      --slate-800: #2f2924;
+      --slate-900: #1d1915;
+      /* Misc */
+      --white: #ffffff;
+      --ground: #fbf6ee;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      font-family: 'Hind', sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      background: var(--ground);
+      color: var(--slate-900);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font: inherit;
+      border: 0;
+      cursor: pointer;
+      background: none
+    }
+
+    img,
+    svg {
+      display: block
+    }
+
+    input {
+      font: inherit;
+      border: 0;
+      outline: none
+    }
+
+    .font-serif {
+      font-family: 'Cinzel', 'Cormorant Garamond', 'Hind', Georgia, serif
+    }
+
+    .font-verse {
+      font-family: 'Cormorant Garamond', 'Hind', Georgia, serif
+    }
+
+    /* ═══════════════ GOLD SHIMMER TEXT ═══════════════ */
+    .kk-gold-text {
+      background: linear-gradient(110deg, #9c7a3a, #e2c88f 35%, #b8924a, #f3e2b5 65%, #9c7a3a);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: kk-shine 6s ease-in-out infinite;
+    }
+
+    @keyframes kk-shine {
+
+      0%,
+      100% {
+        background-position: 100% 0
+      }
+
+      50% {
+        background-position: 0 0
+      }
+    }
+
+    /* ═══════════════ GATE ENTRY (OpenInvite) ═══════════════ */
+    #gate {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 72px 24px 40px;
+      text-align: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 42%, rgba(232, 207, 143, .16) 0%, transparent 55%),
+        linear-gradient(180deg, #4a0f1e, #6e1830 45%, #4a0f1e);
+      transition: opacity .7s ease .3s, visibility 0s linear 1s;
+    }
+
+    #gate.gate-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    /* Dust particles */
+    .dr-dust {
+      position: absolute;
+      bottom: -10px;
+      width: 3px;
+      height: 3px;
+      border-radius: 9999px;
+      background: #f1dc9f;
+      box-shadow: 0 0 6px 1px rgba(241, 220, 159, .7);
+      animation: dr-dust linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes dr-dust {
+      0% {
+        transform: translateY(0);
+        opacity: 0
+      }
+
+      15% {
+        opacity: .9
+      }
+
+      85% {
+        opacity: .6
+      }
+
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0
+      }
+    }
+
+    /* Arch */
+    .dr-arch {
+      position: relative;
+      width: 232px;
+      height: 262px;
+      padding: 7px;
+      border-radius: 116px 116px 10px 10px;
+      background: linear-gradient(160deg, #f1dc9f, #b8924a 45%, #e8cf8f 70%, #8c6a2e);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .45), 0 0 46px rgba(232, 207, 143, .22);
+    }
+
+    .dr-arch-inner {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 109px 109px 6px 6px;
+      perspective: 700px;
+      background: radial-gradient(ellipse at 50% 55%, rgba(255, 246, 220, .15), rgba(251, 231, 176, .35) 55%, rgba(184, 146, 74, .75)),
+        radial-gradient(circle at 50% 40%, #e8cf8f, #d4b26a 60%, #b8924a);
+    }
+
+    /* Door leaves */
+    .dr-leaf {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: radial-gradient(circle, #e8cf8f 0 1.6px, transparent 2.2px) 0 0/18px 18px,
+        linear-gradient(180deg, #7a1b34, #5e1426 60%, #4a0f1e);
+      transition: transform 1.25s cubic-bezier(.6, .05, .25, 1);
+      backface-visibility: hidden;
+    }
+
+    .dr-leaf::before,
+    .dr-leaf::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      border: 1.5px solid rgba(232, 207, 143, .75);
+      border-radius: 6px;
+      background: rgba(74, 15, 30, .55);
+    }
+
+    .dr-leaf::before {
+      top: 54px;
+      height: 78px;
+      border-radius: 60px 60px 6px 6px
+    }
+
+    .dr-leaf::after {
+      top: 146px;
+      bottom: 16px
+    }
+
+    .dr-left {
+      left: 0;
+      transform-origin: left center;
+      border-right: 1px solid rgba(232, 207, 143, .5)
+    }
+
+    .dr-right {
+      right: 0;
+      transform-origin: right center;
+      border-left: 1px solid rgba(232, 207, 143, .5)
+    }
+
+    /* Gap glow */
+    .dr-gap {
+      position: absolute;
+      left: 50%;
+      top: 8%;
+      bottom: 0;
+      width: 3px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent, #fff3cf 30%, #fff3cf 80%, transparent);
+      box-shadow: 0 0 12px 3px rgba(255, 226, 160, .7);
+      animation: dr-gap 2.6s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes dr-gap {
+
+      0%,
+      100% {
+        opacity: .45
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* Lock */
+    .dr-lock {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%);
+      transition: transform .6s ease, opacity .5s ease;
+    }
+
+    .dr-lock-glow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #8e1f3a, #4a0f1e);
+      animation: dr-lock-glow 2.6s ease-in-out infinite;
+    }
+
+    @keyframes dr-lock-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 2px #d4b26a, 0 0 14px rgba(255, 226, 160, .35)
+      }
+
+      50% {
+        box-shadow: 0 0 0 2px #e8cf8f, 0 0 26px rgba(255, 226, 160, .75)
+      }
+    }
+
+    .dr-shake {
+      animation: dr-shake .5s ease
+    }
+
+    @keyframes dr-shake {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) rotate(0)
+      }
+
+      20% {
+        transform: translate(-56%, -50%) rotate(-8deg)
+      }
+
+      40% {
+        transform: translate(-44%, -50%) rotate(7deg)
+      }
+
+      60% {
+        transform: translate(-54%, -50%) rotate(-5deg)
+      }
+
+      80% {
+        transform: translate(-47%, -50%) rotate(3deg)
+      }
+    }
+
+    /* Door opening states */
+    .dr-opening .dr-lock {
+      transform: translate(-50%, -50%) rotate(200deg) scale(.3);
+      opacity: 0
+    }
+
+    .dr-opening .dr-gap {
+      opacity: 0;
+      animation: none
+    }
+
+    .dr-opening .dr-left {
+      transform: rotateY(82deg);
+      transition-delay: .35s
+    }
+
+    .dr-opening .dr-right {
+      transform: rotateY(-82deg);
+      transition-delay: .35s
+    }
+
+    .dr-flood {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle at 50% 42%, #fffaf0, #fbe7b0 40%, #f6ebda);
+      transition: opacity .7s ease 1.1s;
+    }
+
+    .dr-opening .dr-flood {
+      opacity: 1
+    }
+
+    /* Input plaque */
+    .dr-plaque {
+      position: relative;
+      padding: 4px;
+      border-radius: 16px;
+      background: linear-gradient(160deg, #f1dc9f, #b8924a 45%, #e8cf8f 70%, #8c6a2e);
+      animation: dr-plaque 2.2s ease-in-out infinite;
+    }
+
+    .dr-plaque:focus-within,
+    .dr-plaque.dr-filled {
+      animation: none;
+      box-shadow: 0 0 0 3px rgba(255, 243, 207, .55), 0 0 24px rgba(255, 226, 160, .55)
+    }
+
+    @keyframes dr-plaque {
+
+      0%,
+      100% {
+        box-shadow: 0 0 rgba(255, 226, 160, 0), 0 0 10px rgba(255, 226, 160, .25)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(255, 226, 160, .28), 0 0 28px rgba(255, 226, 160, .7)
+      }
+    }
+
+    .dr-input {
+      width: 100%;
+      height: 56px;
+      padding: 0 12px;
+      border: 0;
+      border-radius: 12px;
+      background: #fbf3df;
+      color: #4a0f1e;
+      caret-color: #8e1f3a;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: .025em;
+      font-size: 17px;
+      box-shadow: inset 0 2px 6px rgba(74, 15, 30, .18);
+      outline: none;
+    }
+
+    .dr-input::placeholder {
+      color: rgba(110, 24, 48, .55);
+      font-weight: 500;
+      letter-spacing: 0
+    }
+
+    .dr-input.has-value {
+      font-size: 21px
+    }
+
+    /* CTA button */
+    .dr-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 48px;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, #f1dc9f, #d4b26a 55%, #b8924a);
+      color: #4a0f1e;
+      font-size: 16.5px;
+      font-weight: 700;
+      letter-spacing: .025em;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .35), inset 0 1px rgba(255, 255, 255, .6);
+    }
+
+    .dr-button:active {
+      transform: translateY(1px)
+    }
+
+    .dr-button:disabled {
+      opacity: .8
+    }
+
+    /* Bouncing chevron */
+    .dr-point {
+      animation: dr-point 1.3s ease-in-out infinite
+    }
+
+    @keyframes dr-point {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(5px)
+      }
+    }
+
+    /* ═══════════════ INVITE PAGE ═══════════════ */
+    #invite {
+      display: none;
+      min-height: 100vh;
+      background-color: var(--gold-50);
+      background-image: radial-gradient(circle at 20% 10%, rgba(184, 146, 74, .08) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 60%, rgba(142, 31, 58, .05) 0 2px, transparent 3px);
+      background-size: 44px 44px, 60px 60px;
+    }
+
+    #invite.show {
+      display: block
+    }
+
+    /* Petal rain */
+    .kk-petals {
+      position: fixed;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      overflow: hidden
+    }
+
+    .kk-petal {
+      position: absolute;
+      top: -40px;
+      animation-name: kk-fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite
+    }
+
+    .kk-petal>svg {
+      animation: kk-spin-petal 3.5s ease-in-out infinite alternate
+    }
+
+    @keyframes kk-fall {
+      0% {
+        transform: translate3d(0, -40px, 0);
+        opacity: 0
+      }
+
+      8% {
+        opacity: .95
+      }
+
+      50% {
+        transform: translate3d(28px, 50vh, 0)
+      }
+
+      92% {
+        opacity: .9
+      }
+
+      100% {
+        transform: translate3d(-18px, 105vh, 0);
+        opacity: 0
+      }
+    }
+
+    @keyframes kk-spin-petal {
+      0% {
+        transform: rotate(-35deg) scaleX(1)
+      }
+
+      100% {
+        transform: rotate(55deg) scaleX(.55)
+      }
+    }
+
+    /* Header */
+    .inv-header {
+      position: relative;
+      padding: 32px 16px 32px;
+      text-align: center;
+      background: rgba(246, 236, 218, .7);
+    }
+
+    .inv-header .ornament-top {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    /* Mandala spin */
+    .mandala {
+      animation: kk-spin 80s linear infinite;
+      transform-origin: center
+    }
+
+    @keyframes kk-spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* Section reveal */
+    .kk-reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1)
+    }
+
+    .kk-reveal.kk-in {
+      opacity: 1;
+      transform: none
+    }
+
+    /* Card */
+    .inv-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 20px;
+      box-shadow: 0 8px 24px rgba(70, 20, 32, .14);
+      border: 1px solid var(--gold-200);
+    }
+
+    /* Ornamental dividers */
+    .ornament-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0;
+      color: var(--gold-400);
+    }
+
+    .ornament-div .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-300), transparent)
+    }
+
+    .ornament-div svg {
+      flex-shrink: 0;
+      opacity: .7
+    }
+
+    /* ═══════════════ EVENT CARDS (REEL) ═══════════════ */
+    .events-reel {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding: 0 16px;
+    }
+
+    .event-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-card-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .event-card-content {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 24px 24px;
+    }
+
+    .event-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .18);
+      backdrop-filter: blur(4px);
+      margin-bottom: 16px;
+    }
+
+    .event-name {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4px
+    }
+
+    .event-date {
+      font-size: 15px;
+      font-weight: 500;
+      opacity: .85;
+      margin-bottom: 20px
+    }
+
+    .event-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .15);
+      font-size: 14.5px;
+    }
+
+    .event-detail:last-child {
+      border-bottom: 0
+    }
+
+    .event-detail svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      opacity: .8
+    }
+
+    .event-detail-label {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: .7;
+      margin-bottom: 2px
+    }
+
+    .event-detail-value {
+      font-weight: 500
+    }
+
+    .event-programme {
+      margin-top: auto;
+      padding-top: 16px
+    }
+
+    .event-programme-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    .event-programme-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .5;
+      flex-shrink: 0
+    }
+
+    .event-programme-time {
+      font-weight: 600;
+      min-width: 52px;
+      font-variant-numeric: tabular-nums
+    }
+
+    .event-dress {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(4px);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .event-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, .2);
+      backdrop-filter: blur(4px);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .event-map-btn:hover {
+      background: rgba(255, 255, 255, .3)
+    }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    .inv-footer {
+      text-align: center;
+      padding: 40px 16px 48px;
+    }
+
+    /* ═══════════════ ERROR TOAST ═══════════════ */
+    .gate-error {
+      max-width: 290px;
+      margin: 12px auto 0;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .25);
+      color: #ffe2a0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ═══════════════ UTILITY ═══════════════ */
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0)
+    }
+
+    /* ═══════════════ RESPONSIVE ═══════════════ */
+    @media(min-width:640px) {
+      .inv-header {
+        padding: 40px 24px 40px
+      }
+
+      .events-reel {
+        max-width: 540px;
+        margin: 0 auto
+      }
+
+      .inv-card {
+        padding: 36px 28px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .dr-gap,
+      .dr-lock-glow,
+      .dr-plaque,
+      .dr-point,
+      .dr-dust,
+      .kk-petal,
+      .mandala {
+        animation: none
+      }
+
+      .dr-leaf,
+      .dr-lock {
+        transition: none
+      }
+
+      .dr-flood {
+        transition: opacity .3s ease
+      }
+
+      .kk-reveal {
+        opacity: 1;
+        transform: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+     SECTION 1 — GATE / DOOR ENTRY
+     ═══════════════════════════════════════════════════════ -->
+  <div id="gate">
+    <!-- Floating dust particles -->
+    <span class="dr-dust" style="left:6%;animation-duration:9s;animation-delay:0s"></span>
+    <span class="dr-dust" style="left:14%;animation-duration:12s;animation-delay:3s"></span>
+    <span class="dr-dust" style="left:22%;animation-duration:10s;animation-delay:6s"></span>
+    <span class="dr-dust" style="left:31%;animation-duration:13s;animation-delay:1s"></span>
+    <span class="dr-dust" style="left:39%;animation-duration:9s;animation-delay:4s"></span>
+    <span class="dr-dust" style="left:47%;animation-duration:11s;animation-delay:7s"></span>
+    <span class="dr-dust" style="left:55%;animation-duration:12s;animation-delay:2s"></span>
+    <span class="dr-dust" style="left:63%;animation-duration:10s;animation-delay:5s"></span>
+    <span class="dr-dust" style="left:71%;animation-duration:13s;animation-delay:8s"></span>
+    <span class="dr-dust" style="left:79%;animation-duration:9s;animation-delay:1.5s"></span>
+    <span class="dr-dust" style="left:87%;animation-duration:12s;animation-delay:4.5s"></span>
+    <span class="dr-dust" style="left:94%;animation-duration:10s;animation-delay:6.5s"></span>
+    <span class="dr-dust" style="left:27%;animation-duration:14s;animation-delay:9s"></span>
+    <span class="dr-dust" style="left:68%;animation-duration:14s;animation-delay:10s"></span>
+
+    <!-- Monogram -->
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin-bottom:4px">
+      <circle cx="24" cy="24" r="22" stroke="#e2c88f" stroke-width="1.5" fill="none" opacity=".5" />
+      <circle cx="24" cy="24" r="18" stroke="#d4b26a" stroke-width="1" fill="none" opacity=".3" />
+      <text x="24" y="30" text-anchor="middle" fill="#f1dc9f" font-family="'Cormorant Garamond',serif" font-size="22"
+        font-weight="600">ॐ</text>
+    </svg>
+
+    <!-- Invocation -->
+    <p class="font-verse" style="font-size:15px;font-weight:600;color:#e2c88f;letter-spacing:.025em">
+      || Shree Ganeshay Namah ||
+    </p>
+
+    <!-- Eyebrow -->
+    <p class="font-serif"
+      style="margin-top:16px;font-size:12px;text-transform:uppercase;letter-spacing:4px;color:#e2c88f">
+      The celebration of
+    </p>
+
+    <!-- Couple Names -->
+    <h1 class="font-serif kk-gold-text" style="margin-top:4px;font-size:31px;font-weight:600;line-height:1.25">
+      Pooja &amp; Mayank
+    </h1>
+
+    <!-- Arch with doors -->
+    <div style="position:relative;margin-top:24px;cursor:pointer" id="archWrap">
+      <div class="dr-arch">
+        <div class="dr-arch-inner">
+          <div class="dr-leaf dr-left"></div>
+          <div class="dr-leaf dr-right"></div>
+          <span class="dr-gap" aria-hidden="true"></span>
+          <span class="dr-lock" id="lockIcon">
+            <span class="dr-lock-glow">
+              <!-- Key SVG -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f1dc9f" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15.5 7.5 2.3-2.3a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1 0 1.4L18 10" />
+                <path d="m21 2-9.3 9.3" />
+                <circle cx="7.5" cy="15.5" r="5.5" fill="none" />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+      <!-- Dots below arch -->
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:-12px">
+        <span style="width:5px;height:5px;border-radius:50%;background:#d4b26a;opacity:.5"></span>
+        <span style="width:5px;height:5px;border-radius:50%;background:#d4b26a;opacity:.5"></span>
+        <span style="width:5px;height:5px;border-radius:50%;background:#d4b26a;opacity:.5"></span>
+      </div>
+    </div>
+
+    <!-- Input form -->
+    <form id="gateForm" autocomplete="off" style="margin-top:20px;width:100%;max-width:300px">
+      <label for="inv-id" class="font-verse"
+        style="display:flex;align-items:center;justify-content:center;gap:8px;color:#ecdcbb;font-size:17px;font-style:italic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e2c88f" stroke-width="2"
+          stroke-linecap="round">
+          <path d="m15.5 7.5 2.3-2.3a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1 0 1.4L18 10" />
+          <path d="m21 2-9.3 9.3" />
+          <circle cx="7.5" cy="15.5" r="5.5" fill="none" />
+        </svg>
+        The word that opens your doors
+      </label>
+
+      <!-- Bouncing chevron -->
+      <svg class="dr-point" style="margin:4px auto" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="#ecdcbb" stroke-width="2" stroke-linecap="round">
+        <path d="m7 6 5 5 5-5" />
+        <path d="m7 13 5 5 5-5" />
+      </svg>
+
+      <div class="dr-plaque" id="plaqueWrap">
+        <input id="inv-id" class="dr-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off"
+          spellcheck="false" enterkeyhint="go" placeholder="✍  Write the word here" />
+      </div>
+
+      <p style="margin-top:8px;color:rgba(226,200,143,.8);font-size:13px">
+        You'll find it in the family's message to you
+      </p>
+
+      <!-- Error message -->
+      <p id="gateError" class="gate-error" style="display:none" role="alert"></p>
+
+      <!-- Submit button -->
+      <button type="submit" class="dr-button" id="gateBtn" style="margin-top:16px">
+        Open the doors
+      </button>
+    </form>
+
+    <!-- Golden flood overlay -->
+    <div class="dr-flood" aria-hidden="true"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+     SECTION 2 — INVITATION (revealed after gate)
+     ═══════════════════════════════════════════════════════ -->
+  <div id="invite">
+
+    <!-- Petal rain container (petals injected by JS) -->
+    <div class="kk-petals" id="petals"></div>
+
+    <!-- ─── HEADER ─── -->
+    <header class="inv-header">
+      <!-- Mandala ornament -->
+      <div class="ornament-top">
+        <svg class="mandala" width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="#d4b26a" stroke-width=".75" opacity=".4" />
+          <circle cx="32" cy="32" r="22" stroke="#d4b26a" stroke-width=".5" opacity=".3" />
+          <circle cx="32" cy="32" r="16" stroke="#e2c88f" stroke-width=".5" opacity=".35" />
+          <g opacity=".3">
+            <circle cx="32" cy="4" r="2" fill="#d4b26a" />
+            <circle cx="32" cy="60" r="2" fill="#d4b26a" />
+            <circle cx="4" cy="32" r="2" fill="#d4b26a" />
+            <circle cx="60" cy="32" r="2" fill="#d4b26a" />
+            <circle cx="11" cy="11" r="1.5" fill="#d4b26a" />
+            <circle cx="53" cy="11" r="1.5" fill="#d4b26a" />
+            <circle cx="11" cy="53" r="1.5" fill="#d4b26a" />
+            <circle cx="53" cy="53" r="1.5" fill="#d4b26a" />
+          </g>
+          <text x="32" y="37" text-anchor="middle" fill="#b8924a" font-family="'Cormorant Garamond',serif"
+            font-size="18" font-weight="600">ॐ</text>
+        </svg>
+      </div>
+
+      <p class="font-verse" style="font-size:17px;font-weight:500;letter-spacing:.025em;color:var(--gold-700)">
+        || Shree Ganeshay Namah ||
+      </p>
+
+      <p class="font-serif"
+        style="margin-top:16px;font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--gold-600);font-weight:500">
+        The wedding of
+      </p>
+
+      <h1 class="font-serif"
+        style="margin-top:8px;font-size:30px;font-weight:600;line-height:1.25;color:var(--brand-700);word-wrap:break-word"
+        id="headerCouple">
+        <span>Pooja</span>
+        <span style="font-weight:400;color:var(--gold-500)"> &amp; </span>
+        <span>Mayank</span>
+      </h1>
+
+      <p style="margin-top:4px;font-size:14px;letter-spacing:.025em;color:var(--slate-600)" id="headerCity">Vadodara</p>
+
+      <p class="kk-gold-text font-verse"
+        style="margin-top:12px;font-size:24px;font-weight:700;letter-spacing:.025em;display:inline-block"
+        id="headerHashtag">
+        #maja
+      </p>
+    </header>
+
+    <!-- ─── GREETING CARD ─── -->
+    <main style="position:relative;z-index:10;max-width:36rem;margin:-12px auto 0;padding:0 16px 0">
+      <div class="inv-card kk-reveal" style="text-align:center">
+        <p class="font-verse" style="font-size:27px;font-weight:600;color:var(--brand-700)" id="greetName">
+          Dear Pooja and Mayank,
+        </p>
+
+        <p class="font-verse"
+          style="margin-top:12px;max-width:24rem;margin-left:auto;margin-right:auto;font-size:19px;line-height:2rem;font-weight:500;color:var(--slate-700)">
+          With joy in our hearts, the family of
+          <br>
+          <span style="font-weight:600;color:var(--brand-700)">Mr. Purshottam Somani, Mrs. Swati Somani &amp; Mr.
+            Dhrumil Somani(Sonu)</span>
+          <br>
+          warmly invite you to celebrate the union of
+        </p>
+
+        <p class="font-serif" style="margin:12px 0;font-size:22px;font-weight:600;color:var(--brand-700)">
+          Pooja &amp; Mayank
+        </p>
+
+        <!-- Ornamental divider -->
+        <div class="ornament-div">
+          <span class="line"></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
+          </svg>
+          <span class="line"></span>
+        </div>
+
+        <p
+          style="display:inline-block;padding:4px 12px;border-radius:9999px;background:var(--gold-100);color:var(--gold-700);font-size:13px">
+          Invitation ID: <strong id="greetHandle">pooja</strong>
+        </p>
+      </div>
+
+      <!-- ─── BLESSINGS CARD ─── 
+      <div class="inv-card kk-reveal" style="margin-top:28px;text-align:center">
+        <p
+          style="font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold-600);font-weight:600;margin-bottom:12px">
+          With blessings of
+        </p>
+        <p style="font-size:15px;color:var(--slate-700);line-height:1.75;white-space:pre-line" id="blessingsText">Late
+          Shri Bhalchandra Gondkar &amp; Late Smt. Jyoti Gondkar
+          Shri Rohit Shah &amp; Smt. Jyotsna Shah</p>
+
+        <div class="ornament-div"><span class="line"></span><svg width="12" height="12" viewBox="0 0 24 24"
+            fill="currentColor">
+            <circle cx="12" cy="12" r="3" />
+          </svg><span class="line"></span></div> -->
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center;margin-top:8px">
+        <div>
+          <p
+            style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-600);font-weight:600;margin-bottom:4px">
+            Bride's Parents</p>
+          <p style="font-size:14px;color:var(--slate-700);font-weight:500" id="brideParents">Mrs. Swati Somani
+            &amp; Mr. Purshottam Somani</p>
+        </div>
+        <div>
+          <p
+            style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-600);font-weight:600;margin-bottom:4px">
+            Groom's Parents</p>
+          <p style="font-size:14px;color:var(--slate-700);font-weight:500" id="groomParents">Mrs. Swati Chokshi
+            &amp; Mr. Parimal Chokshi</p>
+        </div>
+      </div>
+
+      <div class="ornament-div" style="margin-top:16px"><span class="line"></span><svg width="12" height="12"
+          viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="3" />
+        </svg><span class="line"></span></div>
+
+      <p
+        style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-600);font-weight:600;margin-bottom:4px">
+        With regards</p>
+      <p style="font-size:13.5px;color:var(--slate-600);line-height:1.75;white-space:pre-line" id="regardsText">
+        Dhrumil Somani(Sonu)
+        Somani Family</p>
+  </div>
+
+  <!-- ─── EVENTS ─── -->
+  <div style="margin-top:36px">
+    <div class="ornament-div kk-reveal">
+      <span class="line"></span>
+      <p class="font-serif"
+        style="font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--gold-600);white-space:nowrap">
+        Events &amp; Celebrations</p>
+      <span class="line"></span>
+    </div>
+
+    <div class="events-reel" id="eventsContainer">
+      <!-- Events injected by JS -->
+    </div>
+  </div>
+
+  <!-- ─── RSVP CONTACTS ─── -->
+  <div class="inv-card kk-reveal" style="margin-top:28px;text-align:center">
+    <p class="font-serif"
+      style="font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--gold-600);margin-bottom:12px">
+      RSVP &amp; Contact</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px" id="rsvpPhones">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="inv-footer kk-reveal">
+    <div class="ornament-div"><span class="line"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.5">
+        <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
+      </svg><span class="line"></span></div>
+
+    <p class="font-verse"
+      style="margin-top:20px;font-size:20px;font-weight:500;font-style:italic;color:var(--slate-800)">With love,</p>
+    <p class="font-verse" style="margin-top:4px;font-size:25px;font-weight:600;color:var(--brand-700)" id="footerHosts">
+      Mr. Purshottam Somani, Mrs. Swati Somani &amp; Mr. Dhrumil Somani(Sonu)
+    </p>
+
+    <!-- Bottom monogram -->
+    <svg style="margin:20px auto" width="64" height="52" viewBox="0 0 64 52" fill="none">
+      <circle cx="32" cy="26" r="22" stroke="#d4b26a" stroke-width=".75" opacity=".35" />
+      <text x="32" y="32" text-anchor="middle" fill="#b8924a" font-family="'Cormorant Garamond',serif" font-size="18"
+        font-weight="600">ॐ</text>
+    </svg>
+
+    <p class="kk-gold-text font-verse" style="font-size:22px;font-weight:700;letter-spacing:.025em;display:inline-block"
+      id="footerHashtag">#maja
+    </p>
+  </footer>
+  </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════════════ -->
+  <script>
+    /* ═══════════ CONFIGURATION ═══════════
+       Edit these values to customize the invitation.
+    */
+    const CONFIG = {
+      invitationId: "pooja",           // The word that opens the doors
+      brideName: "Pooja",
+      groomName: "Mayank",
+      couple: "Pooja and Mayank",
+      hosts: "Mr. Purshottam Somani & Mrs. Swati Somani\nMr. Dhrumil Somani (Sonu)",
+      city: "Vadodara",
+      hashtag: "majaa",
+      guestName: "Pooja and Mayank",
+      brideParents: "Mrs. Swati Somani & Mr. Purshottam Somani",
+      groomParents: "Mrs. Swati Chokshi & Mr. Parimal Chokshi",
+      regards: "Dhrumil Somami (Sonu)\nSomani Family, Shah Family",
+      rsvpPhones: ["7043611905", "9824116140"],
+      events: [
+        {
+          name: "Vivah Khel & Mehendi",
+          date: "Saturday, 13 February 2027",
+          time: "4:00 PM onwards",
+          venue: "Dabhoi Dashalad Bhavan",
+          address: "Waghodia - Ajwa Ring Rd, Jalaram Nagar, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Dabhoi+Dashalad+Bhavan%2C+Madhavpura%2C+Vadodara",
+          dressCode: "Traditionals",
+          programme: [
+            { time: "4:00 PM", label: "Vivah Khel" },
+            { time: "7:30 PM", label: "Dinner" }
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#3d7a45 0%,#2f6b3a 50%,#1d4a27 100%)",
+            fg: "#f3e2b5",
+            icon: "hand"
+          }
+        },
+        {
+          name: "Ganesh Sthapana",
+          date: "Sunday, 14 February 2027",
+          time: "2:20 PM",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "2:20 PM", label: "Ganesh Sthapana" },
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#f1dfbb 0%,#d9b27a 55%,#b9844a 100%)",
+            fg: "#4a1d0c",
+            icon: "flame"
+          }
+        },
+        {
+          name: "Mandap Muhurat",
+          date: "Sunday, 14 February 2027",
+          time: "2:45 PM",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "2:45 PM", label: "Mandap Muhrat" },
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#f1dfbb 0%,#d9b27a 55%,#b9844a 100%)",
+            fg: "#4a1d0c",
+            icon: "flame"
+          }
+        },
+        {
+          name: "Grah Shanti",
+          date: "Sunday, 14 February 2027",
+          time: "3:30 PM",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "3:30 PM", label: "Grah Shanti" },
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#f1dfbb 0%,#d9b27a 55%,#b9844a 100%)",
+            fg: "#4a1d0c",
+            icon: "flame"
+          }
+        },
+        {
+          name: "Mosadu",
+          date: "Sunday, 14 February 2027",
+          time: "4:00 PM",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "4:00 PM", label: "Mosadu" },
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#ffe066 0%,#f7c331 50%,#f0a202 100%)",
+            fg: "#4a3000",
+            icon: "sun"
+          }
+        },
+        {
+          name: "Haldi Carnival",
+          date: "Sunday, 14 February 2027",
+          time: "6:00 PM onwards",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "6:00 PM", label: "Haldi Carnival" },
+            { time: "8:00 PM", label: "Dinner" }
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#3a3a40 0%,#1c1c21 50%,#0b0b0d 100%)",
+            fg: "#e6e8eb",
+            icon: "music"
+          }
+        },
+        {
+          name: "Wedding",
+          date: "Monday, 15 February 2027",
+          time: "6:30 PM (Hast Melap)",
+          venue: "Bhavans Party PLot",
+          address: "Near Vrajbhoomi, Bhavan’s Crossing, 90, Waghodia Rd, Shree Hari Twp, Madhavpura, Vadodara, Gujarat - 390019",
+          mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Bhavans+Party+Plot%2C+Madhavpura%2C+Vadodara",
+          dressCode: null,
+          programme: [
+            { time: "6:00 PM", label: "Varmala" },
+            { time: "6:30 PM", label: "Hast Melap" },
+            { time: "7:30 PM", label: "Dinner" }
+          ],
+          theme: {
+            bg: "linear-gradient(150deg,#a3213f 0%,#8e1f3a 50%,#5e1426 100%)",
+            fg: "#f3e2b5",
+            icon: "heart"
+          }
+        }
+      ]
+    };
+
+    /* ═══════════ SVG ICONS ═══════════ */
+    const ICONS = {
+      clock: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      mapPin: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>',
+      shirt: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23"/></svg>',
+      phone: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2A18 18 0 0 1 2 3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 7.392 7.384"/></svg>',
+      nav: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>',
+      hand: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>',
+      flame: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>',
+      sun: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
+      music: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+      heart: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>',
+      calendar: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg>',
+    };
+
+    /* ═══════════ GATE LOGIC ═══════════ */
+    const gate = document.getElementById('gate');
+    const gateForm = document.getElementById('gateForm');
+    const gateInput = document.getElementById('inv-id');
+    const gateBtn = document.getElementById('gateBtn');
+    const gateError = document.getElementById('gateError');
+    const plaqueWrap = document.getElementById('plaqueWrap');
+    const lockIcon = document.getElementById('lockIcon');
+    const invite = document.getElementById('invite');
+    let shakeCount = 0;
+
+    gateInput.addEventListener('input', () => {
+      gateError.style.display = 'none';
+      if (gateInput.value.trim()) {
+        gateInput.classList.add('has-value');
+        plaqueWrap.classList.add('dr-filled');
+      } else {
+        gateInput.classList.remove('has-value');
+        plaqueWrap.classList.remove('dr-filled');
+      }
+    });
+
+    gateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = gateInput.value.trim().toLowerCase();
+      if (!val) { showError("Please write the word from the family's message."); return; }
+      if (!/^[a-z0-9]{2,24}$/.test(val)) { showError("That word didn't open the doors. Please check the family's message and try again."); return; }
+
+      // Check invitation ID
+      if (val !== CONFIG.invitationId) {
+        showError("That word didn't open the doors. Please check the family's message and try again.");
+        return;
+      }
+
+      // Success — open the doors!
+      gateBtn.disabled = true;
+      gateBtn.textContent = "Opening…";
+      gateError.style.display = 'none';
+      gateInput.disabled = true;
+      document.activeElement?.blur();
+
+      // Trigger door opening animation
+      gate.classList.add('dr-opening');
+
+      // After animation completes, show invite
+      const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(() => {
+        gate.classList.add('gate-hidden');
+        invite.classList.add('show');
+        document.body.style.overflow = '';
+        window.scrollTo(0, 0);
+        initInvite();
+      }, reducedMotion ? 450 : 1850);
+    });
+
+    function showError(msg) {
+      gateError.textContent = msg;
+      gateError.style.display = 'block';
+      // Shake the lock
+      shakeCount++;
+      lockIcon.className = 'dr-lock dr-shake';
+      lockIcon.setAttribute('key', shakeCount);
+      setTimeout(() => { lockIcon.className = 'dr-lock'; }, 500);
+    }
+
+    /* ═══════════ INVITE INIT ═══════════ */
+    function initInvite() {
+      renderEvents();
+      renderRsvpPhones();
+      spawnPetals();
+      initRevealObserver();
+    }
+
+    /* ═══════════ RENDER EVENTS ═══════════ */
+    function renderEvents() {
+      const container = document.getElementById('eventsContainer');
+      container.innerHTML = CONFIG.events.map((ev, i) => {
+        const icon = ICONS[ev.theme.icon] || ICONS.calendar;
+        const programme = ev.programme.map(p => `
+      <div class="event-programme-item">
+        <span class="event-programme-dot"></span>
+        <span class="event-programme-time">${p.time}</span>
+        <span>${p.label}</span>
+      </div>
+    `).join('');
+
+        const dressHtml = ev.dressCode ? `
+      <div class="event-dress">
+        ${ICONS.shirt}
+        <span>${ev.dressCode}</span>
+      </div>
+    ` : '';
+
+        return `
+      <div class="event-card kk-reveal" style="animation-delay:${i * .08}s">
+        <div class="event-card-bg" style="background:${ev.theme.bg}"></div>
+        <div class="event-card-content" style="color:${ev.theme.fg}">
+          <div class="event-icon">${icon}</div>
+          <div class="event-name">${ev.name}</div>
+          <div class="event-date">
+            ${ICONS.calendar}
+            <span style="margin-left:6px">${ev.date}</span>
+          </div>
+
+          <div class="event-detail">
+            <span style="flex-shrink:0">${ICONS.clock}</span>
+            <div>
+              <div class="event-detail-label">Time</div>
+              <div class="event-detail-value">${ev.time}</div>
+            </div>
+          </div>
+
+          <div class="event-detail">
+            <span style="flex-shrink:0">${ICONS.mapPin}</span>
+            <div>
+              <div class="event-detail-label">Venue</div>
+              <div class="event-detail-value">${ev.venue}</div>
+              <div style="font-size:13px;opacity:.75;margin-top:2px">${ev.address}</div>
+            </div>
+          </div>
+
+          ${ev.mapUrl ? `<a href="${ev.mapUrl}" target="_blank" rel="noopener" class="event-map-btn">${ICONS.nav} Open in Maps</a>` : ''}
+
+          ${dressHtml}
+
+          <div class="event-programme" style="border-top:1px solid rgba(255,255,255,.12);margin-top:16px;padding-top:12px">
+            <div class="event-detail-label" style="margin-bottom:8px">Programme</div>
+            ${programme}
+          </div>
+        </div>
+      </div>
+    `;
+      }).join('');
+    }
+
+    /* ═══════════ RSVP PHONES ═══════════ */
+    function renderRsvpPhones() {
+      const container = document.getElementById('rsvpPhones');
+      container.innerHTML = CONFIG.rsvpPhones.map(ph => `
+    <a href="tel:${ph}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:9999px;background:var(--gold-100);color:var(--brand-700);font-size:14px;font-weight:600;border:1px solid var(--gold-200);transition:background .2s">
+      ${ICONS.phone}
+      ${ph}
+    </a>
+  `).join('');
+    }
+
+    /* ═══════════ SCROLL REVEAL ═══════════ */
+    function initRevealObserver() {
+      const els = document.querySelectorAll('.kk-reveal');
+      if (!els.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('kk-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(el => observer.observe(el));
+    }
+
+    /* ═══════════ PETAL RAIN ═══════════ */
+    function spawnPetals() {
+      const container = document.getElementById('petals');
+      const colors = ['#e88a9e', '#f4b8c7', '#d4698a', '#c95578', '#f0a0b6', '#e07090'];
+      for (let i = 0; i < 18; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'kk-petal';
+        const left = Math.random() * 100;
+        const dur = 7 + Math.random() * 8;
+        const delay = Math.random() * 12;
+        const size = 10 + Math.random() * 8;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        petal.style.cssText = `left:${left}%;animation-duration:${dur}s;animation-delay:${delay}s;`;
+        petal.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="8" ry="5" fill="${color}" opacity=".75" transform="rotate(${Math.random() * 60 - 30} 10 10)"/></svg>`;
+        container.appendChild(petal);
+      }
+    }
+
+    /* ═══════════ PREVENT BODY SCROLL WHEN GATE IS OPEN ═══════════ */
+    document.body.style.overflow = 'hidden';
+  </script>
+</body>
+
+</html>
