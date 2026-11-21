@@ -130,10 +130,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding: calc(clamp(58px, 8.5vh, 74px) + env(safe-area-inset-top, 4px)) 14px calc(clamp(16px, 2.6vh, 24px) + env(safe-area-inset-bottom, 4px));
+      padding: calc(clamp(52px, 7.5vh, 66px) + env(safe-area-inset-top, 4px)) 16px calc(clamp(14px, 2.2vh, 20px) + env(safe-area-inset-bottom, 4px));
       box-sizing: border-box;
       background: radial-gradient(ellipse at 50% 40%, #581023, #3a0814 60%, #1a0207);
     }
@@ -328,19 +328,18 @@
       }
     }
 
-    /* ── Stage (Single screen layout: No overflow, perfectly proportioned, fills mobile screen) ── */
+    /* ── Stage (Evenly spaced harmonious layout across mobile screens) ── */
     .stage {
       position: relative;
       z-index: 6;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
       width: 100%;
       max-width: 360px;
       height: 100%;
-      max-height: 100dvh;
-      padding: 0 4px;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -349,7 +348,7 @@
       flex-direction: column;
       align-items: center;
       flex-shrink: 0;
-      margin-top: clamp(8px, 1.4vh, 16px);
+      margin: 0;
     }
 
     .gate-om {
@@ -415,39 +414,47 @@
     }
 
     .gate-invoc {
-      font-size: clamp(14px, 2vh, 16px);
+      font-size: clamp(13.5px, 1.9vh, 15px);
       font-weight: 600;
       color: #e2c88f;
       letter-spacing: .04em;
-      margin-top: clamp(6px, 1vh, 10px);
-      line-height: 1.45;
+      margin-top: clamp(6px, 1vh, 9px);
+      line-height: 1.35;
     }
 
     .gate-eyebrow {
-      font-size: clamp(11px, 1.5vh, 12.5px);
+      font-size: clamp(10.5px, 1.4vh, 12px);
       text-transform: uppercase;
       letter-spacing: 3.5px;
       color: #dfcaa2;
-      margin-top: clamp(6px, 1vh, 10px);
-      line-height: 1.4;
+      margin-top: clamp(5px, 0.8vh, 8px);
+      line-height: 1.35;
       font-weight: 500;
     }
 
     .gate-couple {
-      font-size: clamp(25px, 3.5vh, 31px);
+      font-size: clamp(24px, 3.4vh, 30px);
       font-weight: 700;
-      line-height: 1.3;
-      margin-top: clamp(3px, 0.5vh, 6px);
+      line-height: 1.25;
+      margin-top: clamp(4px, 0.6vh, 6px);
       letter-spacing: .01em;
     }
 
-    /* ── Jharokha Arch (Main highlight, responsive & fully visible) ── */
+    /* ── Jharokha Centerpiece Wrap (Arch + Dots unified) ── */
+    .jharokha-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
     .jharokha-frame {
       position: relative;
-      width: clamp(215px, 58vw, 255px);
-      height: clamp(210px, 29vh, 255px);
-      margin: clamp(4px, 0.8vh, 8px) auto;
-      border-radius: 130px 130px 16px 16px;
+      width: clamp(220px, 60vw, 260px);
+      height: clamp(215px, 29vh, 260px);
+      margin: 0 auto;
+      border-radius: 135px 135px 16px 16px;
       background: radial-gradient(ellipse at 50% 30%, #5e1426, #3a0b17 65%, #180309);
       border: 2.5px solid #d4b26a;
       box-shadow: 0 0 20px rgba(212, 178, 106, .35), inset 0 0 25px rgba(0, 0, 0, .65);
@@ -845,13 +852,14 @@
       }
     }
 
-    /* ── Gate 3 dots ── */
+    /* ── Gate 3 dots (Attached right under arch) ── */
     .gate-dots {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 5px;
-      margin: 1px 0 clamp(3px, 0.7vh, 8px);
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 0;
       flex-shrink: 0;
     }
 
@@ -860,25 +868,26 @@
       height: 4px;
       border-radius: 50%;
       background: #d4b26a;
-      opacity: .6;
+      opacity: .65;
     }
 
     .gate-dots span:nth-child(2) {
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       background: #f1dc9f;
-      box-shadow: 0 0 5px #f1dc9f;
+      box-shadow: 0 0 6px #f1dc9f;
       opacity: 1;
     }
 
     /* ── Gate Form Content ── */
     .gate-content {
       width: 100%;
-      max-width: 290px;
+      max-width: 295px;
       display: flex;
       flex-direction: column;
       align-items: center;
       flex-shrink: 0;
+      margin: 0;
       opacity: 0;
       transform: translateY(12px);
       transition: opacity .7s ease .5s, transform .7s ease .5s;
@@ -891,6 +900,9 @@
 
     .gate-content form {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .gate-label {
@@ -899,26 +911,30 @@
       justify-content: center;
       gap: 7px;
       color: #f3e4c7;
-      font-size: clamp(13.5px, 1.9vh, 15.5px);
+      font-size: clamp(14px, 1.9vh, 15.5px);
       font-style: italic;
-      line-height: 1.4;
+      line-height: 1.35;
       font-weight: 500;
+      margin-bottom: 5px;
     }
 
     .gate-chevron {
-      margin: 1px auto;
+      margin: 2px auto 8px;
       display: block;
-      width: clamp(14px, 1.9vh, 18px);
-      height: clamp(14px, 1.9vh, 18px);
+      width: clamp(15px, 1.9vh, 18px);
+      height: clamp(15px, 1.9vh, 18px);
     }
 
     /* Input plaque */
     .dr-plaque {
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
       padding: 3px;
       border-radius: 13px;
       background: linear-gradient(160deg, #f1dc9f, #b8924a 45%, #e8cf8f 70%, #8c6a2e);
       animation: dr-plaque 2.2s ease-in-out infinite;
+      margin-bottom: 8px;
     }
 
     .dr-plaque:focus-within,
@@ -941,7 +957,7 @@
 
     .dr-input {
       width: 100%;
-      height: clamp(38px, 5.2vh, 46px);
+      height: clamp(42px, 5.5vh, 48px);
       padding: 0 10px;
       border: 0;
       border-radius: 10px;
@@ -951,9 +967,10 @@
       text-align: center;
       font-weight: 600;
       letter-spacing: .025em;
-      font-size: clamp(14px, 2vh, 16.5px);
+      font-size: clamp(14.5px, 2vh, 17px);
       box-shadow: inset 0 2px 5px rgba(74, 15, 30, .18);
       outline: none;
+      box-sizing: border-box;
     }
 
     .dr-input::placeholder {
@@ -966,10 +983,10 @@
     }
 
     .gate-hint {
-      margin-top: 5px;
+      margin: 0 0 clamp(10px, 1.5vh, 14px);
       color: rgba(243, 228, 199, .9);
-      font-size: clamp(11.5px, 1.5vh, 13px);
-      line-height: 1.45;
+      font-size: clamp(12px, 1.5vh, 13px);
+      line-height: 1.4;
       letter-spacing: .015em;
     }
 
@@ -979,15 +996,18 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: clamp(40px, 5.2vh, 46px);
+      height: clamp(42px, 5.5vh, 48px);
       border-radius: 9999px;
       background: linear-gradient(180deg, #f1dc9f, #d4b26a 55%, #b8924a);
       color: #4a0f1e;
-      font-size: clamp(14px, 1.9vh, 16px);
+      font-size: clamp(14.5px, 1.9vh, 16.5px);
       font-weight: 700;
       letter-spacing: .04em;
       box-shadow: 0 5px 15px rgba(0, 0, 0, .35), inset 0 1px rgba(255, 255, 255, .6);
-      margin-top: clamp(6px, 1.2vh, 11px);
+      margin-top: 0;
+      cursor: pointer;
+      border: 0;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
 
     .dr-button:active {
@@ -1710,8 +1730,9 @@
         <h1 class="font-serif kk-gold-text gate-couple">Pooja &amp; Mayank</h1>
       </div>
 
-      <!-- ══ GRAND JHAROKHA ARCH (Caricatures Centerpiece) ══ -->
-      <div class="jharokha-frame" id="jharokhaArch">
+      <!-- ══ 2. GRAND JHAROKHA ARCH CENTERPIECE (With Attached Dots) ══ -->
+      <div class="jharokha-wrap">
+        <div class="jharokha-frame" id="jharokhaArch">
         <div class="couple-scene pose-namaste" id="coupleScene">
           <svg viewBox="0 0 290 310" width="100%" height="100%" fill="none" preserveAspectRatio="xMidYMid meet"
             style="overflow:visible">
@@ -1769,9 +1790,10 @@
         </div>
       </div>
 
-      <!-- 3 glowing dots below arch -->
-      <div class="gate-dots">
-        <span></span><span></span><span></span>
+        <!-- 3 glowing dots below arch -->
+        <div class="gate-dots">
+          <span></span><span></span><span></span>
+        </div>
       </div>
 
       <!-- Gate content: input form -->
