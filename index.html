@@ -759,25 +759,27 @@
 
     @keyframes cinema-waist-bow {
       0% {
-        transform: perspective(700px) rotateX(0deg) translateY(0);
+        transform: translateY(10px) scale(0.97);
+        opacity: 0.95;
       }
       20% {
-        transform: perspective(700px) rotateX(0deg) translateY(0);
+        transform: translateY(0) scale(1);
+        opacity: 1;
       }
       45% {
-        /* Deep, visible welcoming bow from waist */
-        transform: perspective(700px) rotateX(24deg) translateY(30px) scale(0.96);
+        /* Gentle, respectful welcoming bow pulse */
+        transform: translateY(14px) scale(0.98);
       }
       72% {
-        /* Hold the deep welcoming bow */
-        transform: perspective(700px) rotateX(24deg) translateY(30px) scale(0.96);
+        /* Hold respectful welcoming bow */
+        transform: translateY(14px) scale(0.98);
       }
       88% {
-        /* Rise back upright */
-        transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+        /* Return smoothly */
+        transform: translateY(0) scale(1);
       }
       100% {
-        transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+        transform: translateY(0) scale(1);
       }
     }
 
@@ -1844,7 +1846,7 @@
     <div class="cinema-card">
       <div class="cinema-glow"></div>
       <div class="cinema-couple-box">
-        <img src="images/couple_standing.png" alt="Pooja & Mayank Welcoming Bow" class="cinema-couple-standing" />
+        <img src="images/couple_bow.png" alt="Pooja & Mayank Welcoming Bow" class="cinema-couple-standing" />
       </div>
       <div class="cinema-welcome-text font-serif">Welcome to our Wedding Celebration!</div>
     </div>
